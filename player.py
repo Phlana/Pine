@@ -22,6 +22,16 @@ class Player:
         self.inv = list()
         self.inv_size = 20
 
+        # pygame loading
+        # loading image, converting into surface and rect
+        self.surf = pygame.image.load("player.png").convert()
+        self.rect = self.surf.get_rect()
+
+        # finding image dimensions
+        self.pixelimg = pygame.surfarray.array2d(self.surf)
+        self.width = self.pixelimg.shape[0]
+        self.height = self.pixelimg.shape[1]
+
     class Stats:
         # Player stats
         def __init__(self):
@@ -40,7 +50,7 @@ class Player:
             self.speed = 100
 
             # exp is your experience
-            # maxexp is your experience needed to level up
+            # exp_max is your experience needed to level up
             # level is your combat level
             self.exp = 0
             self.exp_max = 100

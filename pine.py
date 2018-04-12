@@ -1,7 +1,8 @@
 import pygame
+from pygame.locals import *
 from items import *
 from player import *
-
+from environment import *
 
 class Game:
     def __init__(self):
@@ -14,10 +15,15 @@ class Game:
         # self.strengthpot = StrengthPot()
         # self.antidote = Antidote()
 
+        # environment initialization
+        self.environment = Environment()
+
 
 if __name__ == "__main__":
+    pygame.init()
     game = Game()
 
+    # testing
     game.player.inv_add(Herb())
     game.player.inv_remove("Herb")
 
