@@ -3,22 +3,16 @@ A file for the Player information
 """
 
 # import events
+import pygame
+from pygame.locals import *
+import time as T
 
 
 class Player:
 
     def __init__(self):
-        print("Input your name:")
-        self.name = input().strip()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        print()
-        self.stats = self.stats()
+        self.name = ""
+        self.stats = self.Stats()
 
         # coins is the amount of coins you have
         self.coins = 0
@@ -38,8 +32,8 @@ class Player:
 
             # strength adds one point of damage done by melee weapons per value of strength
             self.strength = 0
-            # intellegence adds one point of damage done by magic weapons per value of intellegence
-            self.intellegence = 0
+            # intelligence adds one point of damage done by magic weapons per value of intelligence
+            self.intelligence = 0
             # defence removes one point of damage taken per value of defence
             self.defence = 0
             # speed dictates order of attacking in combat
@@ -59,17 +53,21 @@ class Player:
             # status
             self.faint = 0
 
+    def request_name(self):
+        print("Enter name: ")
+        self.name = input().strip()
+
     def str_up(self, strength: int):
         self.stats.strength += strength
 
     def str_down(self, strength: int):
         self.stats.strength -= strength
 
-    def int_up(self, intellegence: int):
-        self.stats.intellegence += intellegence
+    def int_up(self, intelligence: int):
+        self.stats.intelligence += intelligence
 
-    def int_down(self, intellegence: int):
-        self.stats.intellegence -= intellegence
+    def int_down(self, intelligence: int):
+        self.stats.intelligence -= intelligence
 
     def def_up(self, defence: int):
         self.stats.defence += defence
@@ -127,10 +125,11 @@ class Player:
             self.inv.sort()
 
     def inv_remove(self, item):  # Items are in a class: need to make it remove with matching Item.name
-        if item not in self.inv:
-            raise IndexError
-        else:
-            self.inv.remove(item)
+        for index, thing in enumerate(self.inv):
+            if thing.name == item:
+                del self.inv[index]
+                return
+        raise IndexError
 
     def inv_increase(self, size: int):
         self.inv_size += size
