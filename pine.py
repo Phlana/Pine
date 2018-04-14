@@ -1,11 +1,15 @@
 import pygame
 from pygame.locals import *
-from items import *
-from player import *
-from environment import *
+from items.items import *
+from characters.player import *
+from world.environment import *
+
 
 class Game:
     def __init__(self):
+        # environment initialization
+        self.environment = Environment()
+
         self.player = Player()
         self.player.request_name()
         # self.herb = Herb()
@@ -15,8 +19,10 @@ class Game:
         # self.strengthpot = StrengthPot()
         # self.antidote = Antidote()
 
-        # environment initialization
-        self.environment = Environment()
+        self.player.rect.move_ip(50, 50)
+        self.environment.bg_surf.blit(self.player.surf, self.player.rect)
+
+        pygame.display.flip()
 
 
 if __name__ == "__main__":
@@ -45,3 +51,12 @@ if __name__ == "__main__":
     print()
     print("Coins:", game.player.coins)
     print("Inventory:", len(game.player.inv), "/", game.player.inv_size)
+
+    # pygame window testing
+    while True:
+        pygame.event.pump()
+
+        key = pygame.key.get_pressed()
+        if key[K_ESCAPE]:
+            break
+        continue

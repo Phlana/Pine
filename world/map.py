@@ -9,7 +9,6 @@ class WorldMap:
                         [0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0]]
 
-
     class House_1:
         def __init__(self):
             self.maplist = [[0, 0, 0, 0, 0],

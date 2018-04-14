@@ -23,7 +23,7 @@ if equipment:
 
 # import TextBased
 # import Combat
-from player import *
+from characters.player import *
 
 # consumables
 

@@ -6,6 +6,7 @@ A file for the Player information
 import pygame
 from pygame.locals import *
 import time as T
+# import numpy
 
 
 class Player:
@@ -24,7 +25,7 @@ class Player:
 
         # pygame loading
         # loading image, converting into surface and rect
-        self.surf = pygame.image.load("player.png").convert()
+        self.surf = pygame.image.load("characters\player.png").convert()
         self.rect = self.surf.get_rect()
 
         # finding image dimensions
