@@ -13,5 +13,29 @@ Pixel color codes and what they represent:
 
 
 class Lava:
+    # BASE
+    # orange lava
     def __init__(self):
         self.code = 'FF6200'
+        
+
+
+class Grass:
+    # BASE
+    # walkable generic green grass
+    def __init__(self):
+        self.code = '00FF80'
+
+
+class Wall:
+    # BASE
+    # grey castle walls
+    def __init__(self):
+        self.code = 'E0E0E0'
+
+
+class Water1:
+    # BASE
+    # blue water
+    def __init__(self):
+        self.code = '009999'
