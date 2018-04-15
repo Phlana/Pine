@@ -4,8 +4,6 @@ A file for the Player information
 
 # import events
 import pygame
-from pygame.locals import *
-import time as T
 # import numpy
 
 
