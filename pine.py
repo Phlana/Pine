@@ -2,6 +2,7 @@
 Main file for the game logic
 """
 
+import pyglet
 from items.items import *
 from characters.player import *
 from world.environment import *
@@ -20,6 +21,8 @@ class Game:
         # self.largehealthpot = LargeHealthPotion()
         # self.strengthpot = StrengthPot()
         # self.antidote = Antidote()
+
+        self.player.image.blit(100, 100, 0)
 
 
 if __name__ == "__main__":
@@ -48,9 +51,10 @@ if __name__ == "__main__":
     print("Coins:", game.player.coins)
     print("Inventory:", len(game.player.inv), "/", game.player.inv_size)
 
-    # window testing
-    # while True:
-    #     key = pygame.key.get_pressed()
-    #     if key[K_ESCAPE]:
-    #         break
-    #     continue
+
+    @game.environment.window.event
+    def on_draw():
+        game.environment.window.clear()
+        game.environment.text.draw()
+
+    pyglet.app.run()

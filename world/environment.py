@@ -13,26 +13,37 @@ Some conventions for choosing the color codes
       These tiles will teleport the player to the other tile in the color pair.
 """
 
+import pyglet
 from world.map import *
 
 
 class Environment:
     def __init__(self):
+        self.window = pyglet.window.Window()
+
+        self.world_map = pyglet.image.load("world\map.png")
+        self.map_data = self.world_map.get_image_data()
 
         # all of the different tiles
         self.tile = Tile()
 
+        self.text = pyglet.text.Label('Hello, world',
+                                      font_name='Times New Roman',
+                                      font_size=36,
+                                      # center text
+                                      x=self.window.width // 2, y=self.window.height // 2,
+                                      anchor_x='center', anchor_y='center')
+
     def read_pix(self, pix_x, pix_y):
         # reads a color value of a pixel at specified location as RGB
+        pix = self.world_map.get_region(pix_x, pix_y, 1, 1).get_image_data().get_data('RGB', 3)
+        rgb = (pix[0], pix[1], pix[2])
         # returns its equivalent hex code
-        # rgb = self.world_map.get_at((pix_x, pix_y))
-        # return '%02x%02x%02x' % rgb
-        pass
+        return '%02x%02x%02x' % rgb
 
     # def build_world(self):
     #     # building world
-    #     for x in range(1, self.image_x+1):
-    #         for y in range(1, self.image_y+1):
+    #     for x in range(self.image_x):
+    #         for y in range(self.image_y):
     #             # hex_color = self.read_pix(x, y)
     #             # now find the tile matching this hex color
-

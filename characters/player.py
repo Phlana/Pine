@@ -3,6 +3,7 @@ A file for the Player information
 """
 
 # import events
+import pyglet
 
 
 class Player:
@@ -18,6 +19,11 @@ class Player:
         # inv_size is how many items you can carry
         self.inv = list()
         self.inv_size = 20
+
+        # pyglet loading
+        self.image = pyglet.image.load("characters\player.png")
+        self.image.anchor_x = self.image.width // 2
+        self.image.anchor_y = self.image.height // 2
 
     class Stats:
         # Player stats
