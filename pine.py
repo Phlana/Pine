@@ -2,8 +2,6 @@
 Main file for the game logic
 """
 
-import pygame
-from pygame.locals import *
 from items.items import *
 from characters.player import *
 from world.environment import *
@@ -23,14 +21,8 @@ class Game:
         # self.strengthpot = StrengthPot()
         # self.antidote = Antidote()
 
-        self.player.rect.move_ip(50, 50)
-        self.environment.bg_surf.blit(self.player.surf, self.player.rect)
-
-        pygame.display.flip()
-
 
 if __name__ == "__main__":
-    pygame.init()
     game = Game()
 
     # testing
@@ -56,11 +48,9 @@ if __name__ == "__main__":
     print("Coins:", game.player.coins)
     print("Inventory:", len(game.player.inv), "/", game.player.inv_size)
 
-    # pygame window testing
-    while True:
-        pygame.event.pump()
-
-        key = pygame.key.get_pressed()
-        if key[K_ESCAPE]:
-            break
-        continue
+    # window testing
+    # while True:
+    #     key = pygame.key.get_pressed()
+    #     if key[K_ESCAPE]:
+    #         break
+    #     continue

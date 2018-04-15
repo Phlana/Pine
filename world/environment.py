@@ -13,33 +13,26 @@ Some conventions for choosing the color codes
       These tiles will teleport the player to the other tile in the color pair.
 """
 
-import pygame
-# from map import *
+from world.map import *
 
 
 class Environment:
     def __init__(self):
-        self.bg_surf = pygame.display.set_mode((854, 480), pygame.HWSURFACE)
-        self.bg_surf.fill((0, 0, 0))
-
-        self.world_map = pygame.image.load("world\map.png").convert()
-        self.map_pix = pygame.surfarray.array2d(self.world_map)
-        self.image_x = self.map_pix.shape[0]
-        self.image_y = self.map_pix.shape[1]
 
         # all of the different tiles
-
-        pygame.display.flip()
+        self.tile = Tile()
 
     def read_pix(self, pix_x, pix_y):
         # reads a color value of a pixel at specified location as RGB
         # returns its equivalent hex code
-        rgb = self.world_map.get_at((pix_x, pix_y))
-        return '%02x%02x%02x' % rgb
+        # rgb = self.world_map.get_at((pix_x, pix_y))
+        # return '%02x%02x%02x' % rgb
+        pass
 
-    def build_world(self):
-        # building world
-        for x in range(1, self.image_x+1):
-            for y in range(1, self.image_y+1):
-                hex_color = self.read_pix(x, y)
-                # now find the tile matching this hex color
+    # def build_world(self):
+    #     # building world
+    #     for x in range(1, self.image_x+1):
+    #         for y in range(1, self.image_y+1):
+    #             # hex_color = self.read_pix(x, y)
+    #             # now find the tile matching this hex color
+
