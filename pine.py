@@ -1,3 +1,7 @@
+"""
+Main file for the game logic
+"""
+
 import pygame
 from pygame.locals import *
 from items.items import *
