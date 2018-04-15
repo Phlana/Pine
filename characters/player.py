@@ -3,8 +3,7 @@ A file for the Player information
 """
 
 # import events
-import pygame
-# import numpy
+import pyglet
 
 
 class Player:
@@ -21,15 +20,10 @@ class Player:
         self.inv = list()
         self.inv_size = 20
 
-        # pygame loading
-        # loading image, converting into surface and rect
-        self.surf = pygame.image.load("characters\player.png").convert()
-        self.rect = self.surf.get_rect()
-
-        # finding image dimensions
-        self.pixelimg = pygame.surfarray.array2d(self.surf)
-        self.width = self.pixelimg.shape[0]
-        self.height = self.pixelimg.shape[1]
+        # pyglet loading
+        self.image = pyglet.image.load("characters\player.png")
+        self.image.anchor_x = self.image.width // 2
+        self.image.anchor_y = self.image.height // 2
 
     class Stats:
         # Player stats

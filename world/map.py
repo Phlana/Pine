@@ -7,35 +7,36 @@ Some conventions for choosing the color codes
 
 Pixel color codes and what they represent:
     FF6200 - lava
-
-
 """
 
 
-class Lava:
-    # BASE
-    # orange lava
+class Tile:
     def __init__(self):
-        self.code = 'FF6200'
-        
+        self.lava = self.Lava()
+        self.grass = self.Grass()
+        self.wall = self.Wall()
+        self.water1 = self.Water1()
 
+    class Lava:
+        # BASE
+        # orange lava
+        def __init__(self):
+            self.code = 'FF6200'
 
-class Grass:
-    # BASE
-    # walkable generic green grass
-    def __init__(self):
-        self.code = '00FF80'
+    class Grass:
+        # BASE
+        # walkable generic green grass
+        def __init__(self):
+            self.code = '00FF80'
 
+    class Wall:
+        # BASE
+        # grey castle walls
+        def __init__(self):
+            self.code = 'E0E0E0'
 
-class Wall:
-    # BASE
-    # grey castle walls
-    def __init__(self):
-        self.code = 'E0E0E0'
-
-
-class Water1:
-    # BASE
-    # blue water
-    def __init__(self):
-        self.code = '009999'
+    class Water1:
+        # BASE
+        # blue water
+        def __init__(self):
+            self.code = '009999'
