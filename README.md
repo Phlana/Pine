@@ -2,7 +2,11 @@
 
 rpg with turn based combat using pygame
 
-inspired by the Golden Sun series for the GBA
+jk pygame is really slow im switching to pyglet
+
+
+    inspired by the Golden Sun series for the GBA
+
 
 storywriter needed
 
