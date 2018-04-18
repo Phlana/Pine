@@ -24,6 +24,7 @@ if equipment:
 # import TextBased
 # import Combat
 from characters.player import *
+from image import *
 
 # consumables
 

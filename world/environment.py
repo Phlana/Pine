@@ -21,8 +21,8 @@ class Environment:
     def __init__(self):
         self.window = pyglet.window.Window()
 
-        self.world_map = pyglet.image.load("world\map.png")
-        self.map_data = self.world_map.get_image_data()
+        self.world_map = None
+        self.map_data = None
 
         # all of the different tiles
         self.tile = Tile()

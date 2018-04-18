@@ -3,11 +3,10 @@ A file for the Player information
 """
 
 # import events
-import pyglet
+from image import *
 
 
 class Player:
-
     def __init__(self):
         self.name = ""
         self.stats = self.Stats()
@@ -20,10 +19,8 @@ class Player:
         self.inv = list()
         self.inv_size = 20
 
-        # pyglet loading
-        self.image = pyglet.image.load("characters\player.png")
-        self.image.anchor_x = self.image.width // 2
-        self.image.anchor_y = self.image.height // 2
+        # pyglet preinitialization
+        self.image = None
 
     class Stats:
         # Player stats

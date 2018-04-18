@@ -10,10 +10,23 @@ from world.environment import *
 
 class Game:
     def __init__(self):
+        # drawing batch initialization
+        self.main_draw_batch = pyglet.graphics.Batch()
         # environment initialization
         self.environment = Environment()
 
         self.player = Player()
+
+        # pyglet loading
+        # player
+        self.player.image = pyglet.image.load("characters\player.png")
+        center_anchor(self.player.image)
+        self.player.player = pyglet.sprite.Sprite(img=self.player.image, x=400, y=300, batch=self.main_draw_batch)
+
+        # map
+        self.environment.world_map = pyglet.image.load("world\map.png")
+        self.environment.map_data = self.environment.world_map.get_image_data()
+
         self.player.request_name()
         # self.herb = Herb()
         # self.smallhealthpot = SmallHealthPotion()
@@ -22,7 +35,7 @@ class Game:
         # self.strengthpot = StrengthPot()
         # self.antidote = Antidote()
 
-        self.player.image.blit(100, 100, 0)
+        # self.player.image.blit(100, 100, 0)
 
 
 if __name__ == "__main__":
@@ -56,5 +69,6 @@ if __name__ == "__main__":
     def on_draw():
         game.environment.window.clear()
         game.environment.text.draw()
+        game.main_draw_batch.draw()
 
     pyglet.app.run()
