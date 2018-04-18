@@ -9,6 +9,8 @@ Pixel color codes and what they represent:
     FF6200 - lava
 """
 
+from image import *
+
 
 class Tile:
     def __init__(self):
