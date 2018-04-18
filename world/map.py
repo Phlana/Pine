@@ -25,18 +25,57 @@ class Tile:
 
     class Grass:
         # BASE
+        # Bright Green
         # walkable generic green grass
         def __init__(self):
             self.code = '00FF80'
 
+    class Hedge:
+        # BASE
+        # Dark Green
+        # not walkable hedge
+        def __init__(self):
+            self.code = '00C040'
+
+    # generic tree
+    class TreeTL:
+        # top left
+        def __init__(self):
+            self.code = '007000'
+
+    class TreeTR:
+        # top right
+        def __init__(self):
+            self.code = '007100'
+
+    class TreeBL:
+        # bottom left
+        def __init__(self):
+            self.code = '007200'
+
+    class TreeBR:
+        # bottom right
+        def __init__(self):
+            self.code = '007300'
+
     class Wall:
         # BASE
+        # light grey
         # grey castle walls
         def __init__(self):
             self.code = 'E0E0E0'
 
     class Water1:
         # BASE
+        # dirty aqua blue
         # blue water
         def __init__(self):
-            self.code = '009999'
+            self.code = '00A0A0'
+
+    class FountainWater:
+        # BASE
+        # pale blue
+        # fountain water
+        def __init__(self):
+            self.code = '8080F0'
+
