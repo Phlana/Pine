@@ -16,6 +16,8 @@ sprite artist needed
 
 
 
+I swear i havnt forggotnem about this - Lol!
+
 
 
 
